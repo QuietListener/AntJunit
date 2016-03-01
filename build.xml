@@ -18,6 +18,9 @@
 	 <target name="compile" depends="clean" >
 	    <mkdir dir="${class.dir}" />
 	    <javac srcdir="src" destdir="${class.dir}" classpathref="classpath" />
+	 	<copy todir="${class.dir}">
+	 		<fileset dir="${src.dir}" excludes="**/*.java"/>
+	 	</copy>
 	 </target>
 	
 	 <target name="jar" depends="compile">
