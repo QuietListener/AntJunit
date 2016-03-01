@@ -1,13 +1,11 @@
 package com.andy.antjunit.test;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
-
+import static org.junit.Assert.assertEquals;
 import com.andy.antjunit.MessageUtil;
 
 
-public class TestMessageUtil {
+public class MessageUtilUnitTest {
 
    String message = "Robert";	
    MessageUtil messageUtil = new MessageUtil(message);

@@ -7,3 +7,4 @@
 /system.conf
 /.DS_Store
 /*.swp
+/**/*.class

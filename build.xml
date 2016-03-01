@@ -7,6 +7,9 @@
 	<property name="jar.dir"      value="${build.dir}/jar"/>
 	<property name="main-class"   value="com.andy.antjunit.MessageUtil"/>
 	<property name="lib.dir"     value="lib"/>
+	
+	<property name="report.dir"  value="${build.dir}/junitreport"/>
+	
 	<path id="classpath">
 		<fileset dir="${lib.dir}" includes="**/*.jar" />
 	</path>
@@ -43,4 +46,22 @@
 	
 	 <target name="clean-build" depends="clean,jar"></target>
 	 <target name="main" depends="clean, run"/>
+	
+	 <path id="application" location="${jar.dir}/${ant.project.name}.jar"/>
+	
+	  <target name="junit" depends="jar">
+	  	<junit printsummary="yes" showoutput="true">
+	  		<classpath>
+	  			<path refid = "classpath" />
+	  			<path refid = "application"/>
+	  		</classpath>
+	  		<formatter type="xml"/>
+	  		
+	  		<batchtest fork="yes">
+	  			<fileset dir="${src.dir}" includes="**/*Test.java" />
+	  		</batchtest>
+	  		<formatter usefile="false" type="brief"/>
+	  	</junit>
+	  </target>
+	
 </project>
