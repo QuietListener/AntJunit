@@ -1,0 +1,12 @@
+DEMO:Ant 编译项目并使用junit进行测试
+
+1.如何使用ant编译一个项目
+2.在Ant中如何使用junit进行单元测试
+
+先决条件，系统中安装了ant
+
+使用
+ant jar 进行打包操作
+ant junit 进行单元测试
+ant clean 清理项目
+
